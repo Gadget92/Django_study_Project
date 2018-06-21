@@ -19,12 +19,12 @@ class Pizza(models.Model):
     name = models.CharField(max_length=30, verbose_name='Название пиццы')
     short_description = models.CharField(max_length=30, verbose_name='Краткое описание')
     price = models.FloatField(default=0, verbose_name='Цена')
+    image = models.ImageField('Фото', upload_to='firstapp/photos', default='', blank=True)
 
     class Meta:
         ordering = ['name']
         verbose_name = 'Пицца'
         verbose_name_plural = 'Пиццы'
-
 
     def __str__(self):
         return self.name
